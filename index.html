@@ -95,7 +95,8 @@ function myFunction() {
   for (i = 0; i < tr.length; i++) {
     td = tr[i].getElementsByTagName("td");
     if (td) {
-      txtValue = td.textContent || td.innerText;
+      // txtValue = td.textContent || td.innerText;
+      txtValue = td.innerHTML;
       if (txtValue.toUpperCase().indexOf(filter) > -1) {
         tr[i].style.display = "";
       } else {
