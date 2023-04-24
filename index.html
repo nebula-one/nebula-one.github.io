@@ -44,7 +44,7 @@
 
 <h2>My Customers</h2>
 
-<input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search ...." title="Start typing">
+<input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search .." title="Start typing">
 
 <table id="myTable">
   <tr class="header">
@@ -93,7 +93,7 @@ function myFunction() {
   table = document.getElementById("myTable");
   tr = table.getElementsByTagName("tr");
   for (i = 0; i < tr.length; i++) {
-    td = tr[i].getElementsByTagName("td")[1];
+    td = tr[i].getElementsByTagName("td");
     if (td) {
       txtValue = td.textContent || td.innerText;
       // txtValue = td.innerHTML;
