@@ -44,7 +44,7 @@
 
 <h2>My Customers</h2>
 
-<input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search .." title="Start typing">
+<input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search ..." title="Start typing">
 
 <table id="myTable">
   <tr class="header">
@@ -87,23 +87,47 @@
 
 <script>
 function myFunction() {
-  var input, filter, table, tr, td, i, txtValue;
-  input = document.getElementById("myInput");
-  filter = input.value.toUpperCase();
-  table = document.getElementById("myTable");
-  tr = table.getElementsByTagName("tr");
-  for (i = 0; i < tr.length; i++) {
-    td = tr[i].getElementsByTagName("td");
-    if (td) {
-      txtValue = td.textContent || td.innerText;
-      // txtValue = td.innerHTML;
-      if (txtValue.toUpperCase().indexOf(filter) > -1) {
-        tr[i].style.display = "";
-      } else {
-        tr[i].style.display = "none";
-      }
-    }       
-  }
+    // Declare variables
+    var input, filter, table, tr, td, i, txtValue;
+    // This variable switch if the filter catch any result
+    var isset = false;
+    input = document.getElementById("myInput");
+    filter = input.value.toUpperCase();
+    table = document.getElementById("myTable");
+    tr = table.getElementsByTagName("tr");
+
+    // This variable switch if the filter catch any result
+    var isset = false;
+
+    //This loop evalaute all rows
+    for (i = 0; i < tr.length; i++) {
+        //Here we search for all columns in this row
+        //note that we get rid of [0] at the end because we're looking for all
+        //tds, not just the first one
+        let tds = tr[i].getElementsByTagName("td");
+        //Here we evaluate each column for this row
+        for (let td of tds) {
+            //If td has a value
+            if (td) {
+                txtValue = td.textContent || td.innerText;
+                if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                    //If the filter catch any result, we show the row
+                    isset = true;
+                }
+            }
+        }
+        //The decision of show or hide the row is made here because
+        //the loop has to evaluate all columns before decide if show or hide the entire row
+        if (isset) {
+            //If the filter catch any result, we show the row
+            tr[i].style.display = "";
+        } else {
+            //If the filter catch no result, we hide the row
+            tr[i].style.display = "none";
+        }
+        //This is to reset the variable for the next loop
+        isset = false;
+    }
 }
 </script>
 
