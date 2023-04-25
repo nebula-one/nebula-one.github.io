@@ -7,6 +7,29 @@
   box-sizing: border-box;
 }
 
+html{line-height:1.15;-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%}body{margin:0}
+		article,aside,footer,header,nav,section{display:block}h1{font-size:2em;margin:.67em 0}hr{box-sizing:content-box;height:0;overflow:visible}
+		pre{font-family:monospace,monospace;font-size:1em}a{background-color:transparent;-webkit-text-decoration-skip:objects}
+		b,strong{font-weight:bolder}small{font-size:80%}img{border-style:none}
+
+		body {
+			font-size: 15px;
+			color: #32373F;
+			word-wrap: break-word;
+			line-height: 1.6em;
+			background-color: #ffffff;
+			font-family: 'Avenir', 'Arial', sans-serif;
+			padding-bottom: 0px;
+			padding-top: 0px;
+		}
+		kbd {
+			border: 1px solid rgb(220, 220, 220);
+			box-shadow: inset 0 -1px 0 rgb(220, 220, 220);
+			padding: 2px 4px;
+			border-radius: 3px;
+			background-color: rgb(243, 243, 243);
+		}
+
 #myInput {
   background-image: url('/css/searchicon.png');
   background-position: 10px 10px;
@@ -19,25 +42,40 @@
 }
 
 #myTable {
-  border-collapse: collapse;
-  width: 100%;
-  border: 1px solid #ddd;
-  font-size: 18px;
-}
+			text-align: left;
+			border-collapse: collapse;
+			border: 1px solid rgb(220, 220, 220);
+			background-color: #ffffff;
+		}
 
-#myTable th, #myTable td {
-  text-align: left;
-  padding: 12px;
-}
+#myTable td, #myTable th {
+			text-align: left;
+			padding: .5em 1em .5em 1em;
+			font-size: 15;
+			color: #32373F;
+			font-family: 'Avenir', 'Arial', sans-serif;
+		}
 
+  #myTable table th {
+			border: 1px solid rgb(220, 220, 220);
+			border-bottom: 2px solid rgb(220, 220, 220);
+			background-color: rgb(247, 247, 247);
+		}
+  
 #myTable tr {
   border-bottom: 1px solid #ddd;
 }
 
 #myTable tr.header, #myTable tr:hover {
-  background-color: #f1f1f1;
-}
-  
+			background-color: #e5e5e5;
+		}
+
+ #myTable hr {
+			border: none;
+			border-bottom: 2px solid #dddddd;
+		}
+
+ 
 </style>
 </head>
 
@@ -50,7 +88,7 @@
 
 <a href='https://www.imdb.com/list/ls024863935/?st_dt=&amp;mode=simple&amp;page=1&amp;ref_=ttls_vw_smp&amp;sort=release_date,asc'>1001 Movies You Must See Before You Die (All Editions Combined)</a></h1>
 <p>The movies from every &ldquo;1001 Movies to See Before You Die&rdquo; editions from 2003 to the last update in 2021. This list includes 1245 movies from 1902 to 2020.</p>
-<p>Downloaded: 137 Movies<p>"
+<p>Downloaded: 137 Movies<p>
 <table id="myTable">
   <tr class="header">
     <th style="width:5%;">No</th>
