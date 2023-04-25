@@ -1,110 +1,117 @@
 <!DOCTYPE html>
 <html>
-<head>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<style>
-* {
-  box-sizing: border-box;
-}
+	<head>
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<title>1001 Movies to See Before You</title>
+		<style>
+			* {
+			  box-sizing: border-box;
+			}
 
-html{line-height:1.15;-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%}body{margin:0}
-		article,aside,footer,header,nav,section{display:block}h1{font-size:2em;margin:.67em 0}hr{box-sizing:content-box;height:0;overflow:visible}
-		pre{font-family:monospace,monospace;font-size:1em}a{background-color:transparent;-webkit-text-decoration-skip:objects}
-		b,strong{font-weight:bolder}small{font-size:80%}img{border-style:none}
+			html{line-height:1.15;-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%}body{margin:0}
+					article,aside,footer,header,nav,section{display:block}h1{font-size:2em;margin:.67em 0}hr{box-sizing:content-box;height:0;overflow:visible}
+					pre{font-family:monospace,monospace;font-size:1em}a{background-color:transparent;-webkit-text-decoration-skip:objects}
+					b,strong{font-weight:bolder}small{font-size:80%}img{border-style:none}
 
-		body {
-			font-size: 15px;
-			color: #32373F;
-			word-wrap: break-word;
-			line-height: 1.6em;
-			background-color: #ffffff;
-			font-family: 'Avenir', 'Arial', sans-serif;
-			padding-bottom: 0px;
-			padding-top: 0px;
-		}
-		kbd {
-			border: 1px solid rgb(220, 220, 220);
-			box-shadow: inset 0 -1px 0 rgb(220, 220, 220);
-			padding: 2px 4px;
-			border-radius: 3px;
-			background-color: rgb(243, 243, 243);
-		}
+					body {
+						font-size: 15px;
+						color: #32373F;
+						word-wrap: break-word;
+						line-height: 1.6em;
+						background-color: #ffffff;
+						font-family: 'Avenir', 'Arial', sans-serif;
+						padding-bottom: 0px;
+						padding-top: 0px;
+					}
+					kbd {
+						border: 1px solid rgb(220, 220, 220);
+						box-shadow: inset 0 -1px 0 rgb(220, 220, 220);
+						padding: 2px 4px;
+						border-radius: 3px;
+						background-color: rgb(243, 243, 243);
+					}
 
-#myInput {
-  background-image: url('/css/searchicon.png');
-  background-position: 10px 10px;
-  background-repeat: no-repeat;
-  width: 100%;
-  font-size: 16px;
-  padding: 12px 20px 12px 40px;
-  border: 1px solid #ddd;
-  margin-bottom: 12px;
-}
+			#myInput {
+			  background-image: url('/css/searchicon.png');
+			  background-position: 10px 10px;
+			  background-repeat: no-repeat;
+			  width: 100%;
+			  font-size: 16px;
+			  padding: 12px 20px 12px 40px;
+			  border: 1px solid #ddd;
+			  margin-bottom: 12px;
+			}
 
-#myTable {
-			text-align: left;
-			border-collapse: collapse;
-			border: 1px solid rgb(220, 220, 220);
-			background-color: #ffffff;
-		}
+			#myTable {
+						text-align: left;
+						border-collapse: collapse;
+						border: 1px solid rgb(220, 220, 220);
+						background-color: #ffffff;
+					}
 
-#myTable td, #myTable th {
-			text-align: left;
-			padding: .5em 1em .5em 1em;
-			font-size: 15;
-			color: #32373F;
-			font-family: 'Avenir', 'Arial', sans-serif;
-		}
+			#myTable td, #myTable th {
+						text-align: left;
+						padding: .5em 1em .5em 1em;
+						font-size: 15;
+						color: #32373F;
+						font-family: 'Avenir', 'Arial', sans-serif;
+					}
 
-  #myTable table th {
-			border: 1px solid rgb(220, 220, 220);
-			border-bottom: 2px solid rgb(220, 220, 220);
-			background-color: rgb(247, 247, 247);
-		}
-  
-#myTable tr {
-  border-bottom: 1px solid #ddd;
-}
+			  #myTable table th {
+						border: 1px solid rgb(220, 220, 220);
+						border-bottom: 2px solid rgb(220, 220, 220);
+						background-color: rgb(247, 247, 247);
+					}
 
-#myTable tr.header, #myTable tr:hover {
-			background-color: #e5e5e5;
-		}
+			#myTable tr {
+			  border-bottom: 1px solid #ddd;
+			}
 
- #myTable hr {
-			border: none;
-			border-bottom: 2px solid #dddddd;
-		}
+			#myTable tr.header, #myTable tr:hover {
+						background-color: #e5e5e5;
+					}
 
- 
-</style>
-</head>
+			 #myTable hr {
+						border: none;
+						border-bottom: 2px solid #dddddd;
+					}
+		</style>
+	</head>
 
+	<body>
+		<h1>1001 Movies You Must See Before You Die</h1>
 
-<body>
+		<input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search ..." title="Start typing" />
 
-<h2>1001 Movies You Must See Before You Die</h2>
-
-<input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search ..." title="Start typing">
-
-<a href='https://www.imdb.com/list/ls024863935/?st_dt=&amp;mode=simple&amp;page=1&amp;ref_=ttls_vw_smp&amp;sort=release_date,asc'>1001 Movies You Must See Before You Die (All Editions Combined)</a></h1>
-<p>The movies from every &ldquo;1001 Movies to See Before You Die&rdquo; editions from 2003 to the last update in 2021. This list includes 1245 movies from 1902 to 2020.</p>
-<p>Downloaded: 137 Movies<p>
-<table id="myTable">
-<thead>
-  <tr class="header">
-    <th style="width:5%;">No</th>
-    <th style="width:5%;">Done</th>
-    <th style="width:25%;">Title</th>
-    <th style="width:5%;">Year</th>
-    <th style="width:5%;">IMDB</th>
-    <th style="width:15%;">Director</th>
-    <th style="width:25%;">Actors</th>
-    <th style="width:15%;">Genre</th>
-  </tr>
-</thead>
-<tbody>
-<tr><td>1</td><td>Yes</td><td><a href='https://www.imdb.com/title/tt0000417/'>A Trip to the Moon</a></td>                 <td>1902</td><td>8.2</td><td>Georges Méliès</td>                 <td>Georges Méliès, Victor André, Bleuette Bernon</td><td>Short, Action, Adventure</td></tr>
-<tr><td>2</td><td>Yes</td><td><a href='https://www.imdb.com/title/tt0000439/'>The Great Train Robbery</a></td>                 <td>1903</td><td>7.3</td><td>Edwin S. Porter</td>                 <td>Gilbert M. 'Broncho Billy' Anderson, A.C. Abadie, George Barnes</td><td>Short, Action, Adventure</td></tr>
+		<h2><a href="https://www.imdb.com/list/ls024863935/?st_dt=&amp;mode=simple&amp;page=1&amp;ref_=ttls_vw_smp&amp;sort=release_date,asc">1001 Movies You Must See Before You Die (All Editions Combined)</a></h2>
+		<p>The movies from every &ldquo;1001 Movies to See Before You Die&rdquo; editions from 2003 to the last update in 2021. This list includes 1245 movies from 1902 to 2020.</p>
+		<p>Downloaded: 137 Movies</p>
+		<p></p>
+		<table id="myTable">
+			<thead>
+				<tr class="header">
+					<th style="width:5%;">No</th>
+					<th style="width:5%;">Done</th>
+					<th style="width:25%;">Title</th>
+					<th style="width:5%;">Year</th>
+					<th style="width:5%;">IMDB</th>
+					<th style="width:15%;">Director</th>
+					<th style="width:25%;">Actors</th>
+					<th style="width:15%;">Genre</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>1</td>
+					<td>Yes</td>
+					<td><a href="https://www.imdb.com/title/tt0000417/">A Trip to the Moon</a></td>
+					<td>1902</td>
+					<td>8.2</td>
+					<td>Georges Méliès</td>
+					<td>Georges Méliès, Victor André, Bleuette Bernon</td>
+					<td>Short, Action, Adventure</td>
+				</tr>
+				<tr><td>2</td><td>Yes</td><td><a href='https://www.imdb.com/title/tt0000439/'>The Great Train Robbery</a></td>                 <td>1903</td><td>7.3</td><td>Edwin S. Porter</td>                 <td>Gilbert M. 'Broncho Billy' Anderson, A.C. Abadie, George Barnes</td><td>Short, Action, Adventure</td></tr>
 <tr><td>3</td><td>Yes</td><td><a href='https://www.imdb.com/title/tt0004972/'>The Birth of a Nation</a></td>                 <td>1915</td><td>6.2</td><td>D.W. Griffith</td>                 <td>Lillian Gish, Mae Marsh, Henry B. Walthall</td><td>Drama, War</td></tr>
 <tr><td>4</td><td>Yes</td><td><a href='https://www.imdb.com/title/tt0006206/'>Les vampires</a></td>                 <td>1915</td><td>7.3</td><td>Louis Feuillade</td>                 <td>Musidora, Édouard Mathé, Marcel Lévesque</td><td>Action, Adventure, Crime</td></tr>
 <tr><td>5</td><td>Yes</td><td><a href='https://www.imdb.com/title/tt0006864/'>Intolerance: Love’s Struggle Throughout the Ages</a></td>                 <td>1916</td><td>7.7</td><td>D.W. Griffith</td>                 <td>Lillian Gish, Robert Harron, Mae Marsh</td><td>Drama, History</td></tr>
@@ -1347,54 +1354,64 @@ html{line-height:1.15;-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%}bo
 <tr><td>1242</td><td>No</td><td><a href='https://www.imdb.com/title/tt9770150/'>Nomadland</a></td>                 <td>N/A</td><td>N/A</td><td>N/A</td>                 <td>N/A</td><td>N/A</td></tr>
 <tr><td>1243</td><td>No</td><td><a href='https://www.imdb.com/title/tt3464896/'>Small Axe</a></td>                 <td>N/A</td><td>N/A</td><td>N/A</td>                 <td>N/A</td><td>N/A</td></tr>
 <tr><td>1244</td><td>No</td><td><a href='https://www.imdb.com/title/tt2948372/'>Soul</a></td>                 <td>N/A</td><td>N/A</td><td>N/A</td>                 <td>N/A</td><td>N/A</td></tr>
-<tr><td>1245</td><td>No</td><td><a href='https://www.imdb.com/title/tt10514222/'>Ma Rainey’s Black Bottom</a></td>                 <td>N/A</td><td>N/A</td><td>N/A</td>                 <td>N/A</td><td>N/A</td></tr>
-</table>
+				<tr>
+					<td>1245</td>
+					<td>No</td>
+					<td><a href="https://www.imdb.com/title/tt10514222/">Ma Rainey’s Black Bottom</a></td>
+					<td>N/A</td>
+					<td>N/A</td>
+					<td>N/A</td>
+					<td>N/A</td>
+					<td>N/A</td>
+				</tr>
+			</tbody>
+		</table>
 
-<script>
-function myFunction() {
-    // Declare variables
-    var input, filter, table, tr, td, i, txtValue;
-    // This variable switch if the filter catch any result
-    var isset = false;
-    input = document.getElementById("myInput");
-    filter = input.value.toUpperCase();
-    table = document.getElementById("myTable");
-    tr = table.getElementsByTagName("tr");
+		<script>
+			function myFunction() {
+			    // Declare variables
+			    var input, filter, table, tr, td, i, txtValue;
+			    // This variable switch if the filter catch any result
+			    var isset = false;
+			    input = document.getElementById("myInput");
+			    filter = input.value.toUpperCase();
+			    table = document.getElementById("myTable");
+			    tr = table.getElementsByTagName("tr");
 
-    // This variable switch if the filter catch any result
-    var isset = false;
+			    // This variable switch if the filter catch any result
+			    var isset = false;
 
-    //This loop evalaute all rows
-    for (i = 1; i < tr.length; i++) {
-        //Here we search for all columns in this row
-        //note that we get rid of [0] at the end because we're looking for all
-        //tds, not just the first one
-        let tds = tr[i].getElementsByTagName("td");
-        //Here we evaluate each column for this row
-        for (let td of tds) {
-            //If td has a value
-            if (td) {
-                txtValue = td.textContent || td.innerText;
-                if (txtValue.toUpperCase().indexOf(filter) > -1) {
-                    //If the filter catch any result, we show the row
-                    isset = true;
-                }
-            }
-        }
-        //The decision of show or hide the row is made here because
-        //the loop has to evaluate all columns before decide if show or hide the entire row
-        if (isset) {
-            //If the filter catch any result, we show the row
-            tr[i].style.display = "";
-        } else {
-            //If the filter catch no result, we hide the row
-            tr[i].style.display = "none";
-        }
-        //This is to reset the variable for the next loop
-        isset = false;
-    }
-}
-</script>
-</tbody>
-</body>
+			    //This loop evalaute all rows
+			    for (i = 1; i < tr.length; i++) {
+			        //Here we search for all columns in this row
+			        //note that we get rid of [0] at the end because we're looking for all
+			        //tds, not just the first one
+			        let tds = tr[i].getElementsByTagName("td");
+			        //Here we evaluate each column for this row
+			        for (let td of tds) {
+			            //If td has a value
+			            if (td) {
+			                txtValue = td.textContent || td.innerText;
+			                if (txtValue.toUpperCase().indexOf(filter) > -1) {
+			                    //If the filter catch any result, we show the row
+			                    isset = true;
+			                }
+			            }
+			        }
+			        //The decision of show or hide the row is made here because
+			        //the loop has to evaluate all columns before decide if show or hide the entire row
+			        if (isset) {
+			            //If the filter catch any result, we show the row
+			            tr[i].style.display = "";
+			        } else {
+			            //If the filter catch no result, we hide the row
+			            tr[i].style.display = "none";
+			        }
+			        //This is to reset the variable for the next loop
+			        isset = false;
+			    }
+			}
+		</script>
+	</body>
 </html>
+
