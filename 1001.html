@@ -83,6 +83,7 @@
 		<p></p>
 		<input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for anything ..." title="Start typing" />
 		<table id="myTable">
+		<div id="statistic"></div>
 			<thead>
 				<tr class="header">
 					<th style="width:5%;">No</th>
@@ -1387,6 +1388,7 @@ for (i = 1; i < tr.length; i++) {
     //This is to reset the variable for the next loop
     isset = false;
 }
+	document.getElementById("statistic").innerHTML = rowsFound.length;
 }
 </script>
 </body>
