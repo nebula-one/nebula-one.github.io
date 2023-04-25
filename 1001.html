@@ -1360,6 +1360,7 @@ tr = table.getElementsByTagName("tr");
 var isset = false;
 
 //This loop evalaute all rows
+rowsFound = [];
 for (i = 1; i < tr.length; i++) {
     //Here we search for all columns in this row
     //note that we get rid of [0] at the end because we're looking for all
@@ -1381,6 +1382,7 @@ for (i = 1; i < tr.length; i++) {
     if (isset) {
         //If the filter catch any result, we show the row
         tr[i].style.display = "";
+	rowsFound.push(1)
     } else {
         //If the filter catch no result, we hide the row
         tr[i].style.display = "none";
