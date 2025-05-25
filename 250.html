@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<title>IMDb Top 250 movies</title>
+		<style>
+			* {
+			  box-sizing: border-box;
+			}
+
+			html{line-height:1.15;-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%}body{margin:10px}
+					article,aside,footer,header,nav,section{display:block}h1{font-size:2em;margin:.67em 0}hr{box-sizing:content-box;height:0;overflow:visible}
+					pre{font-family:monospace,monospace;font-size:1em}a{background-color:transparent;-webkit-text-decoration-skip:objects}
+					b,strong{font-weight:bolder}small{font-size:80%}img{border-style:none}
+
+					body {
+						font-size: 15px;
+						color: #32373F;
+						word-wrap: break-word;
+						line-height: 1.6em;
+						background-color: #ffffff;
+						font-family: 'Avenir', 'Arial', sans-serif;
+						padding-bottom: 0px;
+						padding-top: 0px;
+					}
+					kbd {
+						border: 1px solid rgb(220, 220, 220);
+						box-shadow: inset 0 -1px 0 rgb(220, 220, 220);
+						padding: 2px 4px;
+						border-radius: 3px;
+						background-color: rgb(243, 243, 243);
+					}
+
+			#myInput {
+			  background-image: url('/css/searchicon.png');
+			  background-position: 10px 10px;
+			  background-repeat: no-repeat;
+			  width: 100%;
+			  font-size: 16px;
+			  padding: 12px 20px 12px 40px;
+			  border: 1px solid #ddd;
+			  margin-bottom: 12px;
+			}
+
+			#myTable {
+						text-align: left;
+						border-collapse: collapse;
+						border: 1px solid rgb(220, 220, 220);
+						background-color: #ffffff;
+					}
+
+			#myTable td, #myTable th {
+						text-align: left;
+						padding: .5em 1em .5em 1em;
+						font-size: 15;
+						color: #32373F;
+						font-family: 'Avenir', 'Arial', sans-serif;
+					}
+
+			  #myTable table th {
+						border: 1px solid rgb(220, 220, 220);
+						border-bottom: 2px solid rgb(220, 220, 220);
+						background-color: rgb(247, 247, 247);
+					}
+
+			#myTable tr {
+			  border-bottom: 1px solid #ddd;
+			}
+
+			#myTable tr.header, #myTable tr:hover {
+						background-color: #e5e5e5;
+					}
+
+			 #myTable hr {
+						border: none;
+						border-bottom: 2px solid #dddddd;
+					}
+		</style>
+	</head>
+	<body>
+		<h2><a href="https://www.imdb.com/chart/top/">IMDb Top 250 movies	</a></h2>
+		<p>IMDb Top 250 movies</p>
+		<p></p>
+		<input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for anything - title, year, director, actors, genre ..." title="Start typing" />
+		<table id="myTable">
+		<div id="statistic"></div>
+		<p></p>
+			<thead>
+				<tr class="header">
+					<th style="width:3%;">No</th>
+					<th style="width:4%;">Dwnld</th>
+					<th style="width:25%;">Title</th>
+					<th style="width:5%;">Year</th>
+					<th style="width:3%;">IMDB</th>
+					<th style="width:3%;">RT</th>
+					<th style="width:15%;">Director</th>
+					<th style="width:27%;">Actors</th>
+					<th style="width:15%;">Genre</th>
+				</tr>
+			</thead>
+			<tbody>
+<tr><td>1</td><td>Yes</td><td><a href='https://www.imdb.com/title/tt0111161' target='_blank'>The Shawshank Redemption</a></td>                 <td>1994</td><td>9.3</td><td>91%</td><td>Frank Darabont</td>                 <td>Tim Robbins, Morgan Freeman, Bob Gunton</td><td>Drama</td></tr>
+<tr><td>2</td><td>Yes</td><td><a href='https://www.imdb.com/title/tt0068646' target='_blank'>The Godfather</a></td>                 <td>1972</td><td>9.2</td><td>97%</td><td>Francis Ford Coppola</td>                 <td>Marlon Brando, Al Pacino, James Caan</td><td>Crime, Drama</td></tr>
+<tr><td>3</td><td>No </td><td><a href='https://www.imdb.com/title/tt0468569' target='_blank'>The Dark Knight</a></td>                 <td>N/A</td><td>N/A</td><td>N/A</td><td>N/A</td>                 <td>N/A</td><td>N/A</td></tr>
+<tr><td>4</td><td>No </td><td><a href='https://www.imdb.com/title/tt0071562' target='_blank'>The Godfather Part II</a></td>                 <td>N/A</td><td>N/A</td><td>N/A</td><td>N/A</td>                 <td>N/A</td><td>N/A</td></tr>
+<tr><td>5</td><td>Yes</td><td><a href='https://www.imdb.com/title/tt0050083' target='_blank'>12 Angry Men</a></td>                 <td>1957</td><td>9.0</td><td>100%</td><td>Sidney Lumet</td>                 <td>Henry Fonda, Lee J. Cobb, Martin Balsam</td><td>Crime, Drama</td></tr>
+<tr><td>6</td><td>No </td><td><a href='https://www.imdb.com/title/tt0167260' target='_blank'>The Lord of the Rings: The Return of the King</a></td>                 <td>N/A</td><td>N/A</td><td>N/A</td><td>N/A</td>                 <td>N/A</td><td>N/A</td></tr>
+<tr><td>7</td><td>No </td><td><a href='https://www.imdb.com/title/tt0108052' target='_blank'>Schindler’s List</a></td>                 <td>N/A</td><td>N/A</td><td>N/A</td><td>N/A</td>                 <td>N/A</td><td>N/A</td></tr>
+<tr><td>8</td><td>Yes</td><td><a href='https://www.imdb.com/title/tt0110912' target='_blank'>Pulp Fiction</a></td>                 <td>1994</td><td>8.9</td><td>92%</td><td>Quentin Tarantino</td>                 <td>John Travolta, Uma Thurman, Samuel L. Jackson</td><td>Crime, Drama</td></tr>
+<tr><td>9</td><td>No </td><td><a href='https://www.imdb.com/title/tt0120737' target='_blank'>The Lord of the Rings: The Fellowship of the Ring</a></td>                 <td>N/A</td><td>N/A</td><td>N/A</td><td>N/A</td>                 <td>N/A</td><td>N/A</td></tr>
+<tr><td>10</td><td>No </td><td><a href='https://www.imdb.com/title/tt0060196' target='_blank'>The Good, the Bad and the Ugly</a></td>                 <td>N/A</td><td>N/A</td><td>N/A</td><td>N/A</td>                 <td>N/A</td><td>N/A</td></tr>
+<tr><td>11</td><td>No </td><td><a href='https://www.imdb.com/title/tt0109830' target='_blank'>Forrest Gump</a></td>                 <td>N/A</td><td>N/A</td><td>N/A</td><td>N/A</td>                 <td>N/A</td><td>N/A</td></tr>
+<tr><td>12</td><td>No </td><td><a href='https://www.imdb.com/title/tt0167261' target='_blank'>The Lord of the Rings: The Two Towers</a></td>                 <td>N/A</td><td>N/A</td><td>N/A</td><td>N/A</td>                 <td>N/A</td><td>N/A</td></tr>
+<tr><td>13</td><td>Yes</td><td><a href='https://www.imdb.com/title/tt0137523' target='_blank'>Fight Club</a></td>                 <td>1999</td><td>8.8</td><td>79%</td><td>David Fincher</td>                 <td>Brad Pitt, Edward Norton, Meat Loaf</td><td>Drama</td></tr>
+<tr><td>14</td><td>No </td><td><a href='https://www.imdb.com/title/tt1375666' target='_blank'>Inception</a></td>                 <td>N/A</td><td>N/A</td><td>N/A</td><td>N/A</td>                 <td>N/A</td><td>N/A</td></tr>
+<tr><td>15</td><td>Yes</td><td><a href='https://www.imdb.com/title/tt0080684' target='_blank'>Star Wars: Episode V - The Empire Strikes Back</a></td>                 <td>1980</td><td>8.7</td><td>94%</td><td>Irvin Kershner</td>                 <td>Mark Hamill, Harrison Ford, Carrie Fisher</td><td>Action, Adventure, Fantasy</td></tr>
+<tr><td>16</td><td>No </td><td><a href='https://www.imdb.com/title/tt0133093' target='_blank'>The Matrix</a></td>                 <td>N/A</td><td>N/A</td><td>N/A</td><td>N/A</td>                 <td>N/A</td><td>N/A</td></tr>
+<tr><td>17</td><td>No </td><td><a href='https://www.imdb.com/title/tt0099685' target='_blank'>GoodFellas</a></td>                 <td>N/A</td><td>N/A</td><td>N/A</td><td>N/A</td>                 <td>N/A</td><td>N/A</td></tr>
+<tr><td>18</td><td>No </td><td><a href='https://www.imdb.com/title/tt0816692' target='_blank'>Interstellar</a></td>                 <td>N/A</td><td>N/A</td><td>N/A</td><td>N/A</td>                 <td>N/A</td><td>N/A</td></tr>
+<tr><td>19</td><td>No </td><td><a href='https://www.imdb.com/title/tt0073486' target='_blank'>One Flew Over the Cuckoo’s Nest</a></td>                 <td>N/A</td><td>N/A</td><td>N/A</td><td>N/A</td>                 <td>N/A</td><td>N/A</td></tr>
+<tr><td>20</td><td>Yes</td><td><a href='https://www.imdb.com/title/tt0114369' target='_blank'>Seven</a></td>                 <td>1995</td><td>8.6</td><td>82%</td><td>David Fincher</td>                 <td>Morgan Freeman, Brad Pitt, Kevin Spacey</td><td>Crime, Drama, Mystery</td></tr>
+<tr><td>21</td><td>No </td><td><a href='https://www.imdb.com/title/tt0038650' target='_blank'>It’s a Wonderful Life</a></td>                 <td>N/A</td><td>N/A</td><td>N/A</td><td>N/A</td>                 <td>N/A</td><td>N/A</td></tr>
+<tr><td>22</td><td>Yes</td><td><a href='https://www.imdb.com/title/tt0102926' target='_blank'>The Silence of the Lambs</a></td>                 <td>1991</td><td>8.6</td><td>95%</td><td>Jonathan Demme</td>                 <td>Jodie Foster, Anthony Hopkins, Lawrence A. Bonney</td><td>Crime, Drama, Thriller</td></tr>
+<tr><td>23</td><td>Yes</td><td><a href='https://www.imdb.com/title/tt0047478' target='_blank'>Seven Samurai</a></td>                 <td>1954</td><td>8.6</td><td>100%</td><td>Akira Kurosawa</td>                 <td>Toshirô Mifune, Takashi Shimura, Keiko Tsushima</td><td>Action, Drama</td></tr>
+<tr><td>24</td><td>No </td><td><a href='https://www.imdb.com/title/tt0120815' target='_blank'>Saving Private Ryan</a></td>                 <td>N/A</td><td>N/A</td><td>N/A</td><td>N/A</td>                 <td>N/A</td><td>N/A</td></tr>
+<tr><td>25</td><td>Yes</td><td><a href='https://www.imdb.com/title/tt0317248' target='_blank'>City of God</a></td>                 <td>2002</td><td>8.6</td><td>91%</td><td>Fernando Meirelles, Kátia Lund</td>                 <td>Alexandre Rodrigues, Leandro Firmino, Matheus Nachtergaele</td><td>Crime, Drama</td></tr>
+<tr><td>26</td><td>No </td><td><a href='https://www.imdb.com/title/tt0120689' target='_blank'>The Green Mile</a></td>                 <td>N/A</td><td>N/A</td><td>N/A</td><td>N/A</td>                 <td>N/A</td><td>N/A</td></tr>
+<tr><td>27</td><td>No </td><td><a href='https://www.imdb.com/title/tt0118799' target='_blank'>Life Is Beautiful</a></td>                 <td>N/A</td><td>N/A</td><td>N/A</td><td>N/A</td>                 <td>N/A</td><td>N/A</td></tr>
+<tr><td>28</td><td>No </td><td><a href='https://www.imdb.com/title/tt0103064' target='_blank'>Terminator 2: Judgment Day</a></td>                 <td>N/A</td><td>N/A</td><td>N/A</td><td>N/A</td>                 <td>N/A</td><td>N/A</td></tr>
+<tr><td>29</td><td>Yes</td><td><a href='https://www.imdb.com/title/tt0076759' target='_blank'>Star Wars</a></td>                 <td>1977</td><td>8.6</td><td>93%</td><td>George Lucas</td>                 <td>Mark Hamill, Harrison Ford, Carrie Fisher</td><td>Action, Adventure, Fantasy</td></tr>
+<tr><td>30</td><td>Yes</td><td><a href='https://www.imdb.com/title/tt0088763' target='_blank'>Back to the Future</a></td>                 <td>1985</td><td>8.5</td><td>93%</td><td>Robert Zemeckis</td>                 <td>Michael J. Fox, Christopher Lloyd, Lea Thompson</td><td>Adventure, Comedy, Sci-Fi</td></tr>
+<tr><td>31</td><td>No </td><td><a href='https://www.imdb.com/title/tt0245429' target='_blank'>Spirited Away</a></td>                 <td>N/A</td><td>N/A</td><td>N/A</td><td>N/A</td>                 <td>N/A</td><td>N/A</td></tr>
+<tr><td>32</td><td>No </td><td><a href='https://www.imdb.com/title/tt0253474' target='_blank'>The Pianist</a></td>                 <td>N/A</td><td>N/A</td><td>N/A</td><td>N/A</td>                 <td>N/A</td><td>N/A</td></tr>
+<tr><td>33</td><td>No </td><td><a href='https://www.imdb.com/title/tt0172495' target='_blank'>Gladiator</a></td>                 <td>N/A</td><td>N/A</td><td>N/A</td><td>N/A</td>                 <td>N/A</td><td>N/A</td></tr>
+<tr><td>34</td><td>No </td><td><a href='https://www.imdb.com/title/tt6751668' target='_blank'>Parasite</a></td>                 <td>N/A</td><td>N/A</td><td>N/A</td><td>N/A</td>                 <td>N/A</td><td>N/A</td></tr>
+<tr><td>35</td><td>No </td><td><a href='https://www.imdb.com/title/tt0054215' target='_blank'>Psycho</a></td>                 <td>N/A</td><td>N/A</td><td>N/A</td><td>N/A</td>                 <td>N/A</td><td>N/A</td></tr>
+<tr><td>36</td><td>No </td><td><a href='https://www.imdb.com/title/tt0110357' target='_blank'>The Lion King</a></td>                 <td>N/A</td><td>N/A</td><td>N/A</td><td>N/A</td>                 <td>N/A</td><td>N/A</td></tr>
+<tr><td>37</td><td>Yes</td><td><a href='https://www.imdb.com/title/tt0095327' target='_blank'>Grave of the Fireflies</a></td>                 <td>1988</td><td>8.5</td><td>100%</td><td>Isao Takahata</td>                 <td>Tsutomu Tatsumi, Ayano Shiraishi, Akemi Yamaguchi</td><td>Animation, Drama, War</td></tr>
+<tr><td>38</td><td>No </td><td><a href='https://www.imdb.com/title/tt0407887' target='_blank'>The Departed</a></td>                 <td>N/A</td><td>N/A</td><td>N/A</td><td>N/A</td>                 <td>N/A</td><td>N/A</td></tr>
+<tr><td>39</td><td>No </td><td><a href='https://www.imdb.com/title/tt2582802' target='_blank'>Whiplash</a></td>                 <td>N/A</td><td>N/A</td><td>N/A</td><td>N/A</td>                 <td>N/A</td><td>N/A</td></tr>
+<tr><td>40</td><td>No </td><td><a href='https://www.imdb.com/title/tt0056058' target='_blank'>Harakiri</a></td>                 <td>N/A</td><td>N/A</td><td>N/A</td><td>N/A</td>                 <td>N/A</td><td>N/A</td></tr>
+<tr><td>41</td><td>No </td><td><a href='https://www.imdb.com/title/tt0482571' target='_blank'>The Prestige</a></td>                 <td>N/A</td><td>N/A</td><td>N/A</td><td>N/A</td>                 <td>N/A</td><td>N/A</td></tr>
+<tr><td>42</td><td>No </td><td><a href='https://www.imdb.com/title/tt0120586' target='_blank'>American History X</a></td>                 <td>N/A</td><td>N/A</td><td>N/A</td><td>N/A</td>                 <td>N/A</td><td>N/A</td></tr>
+<tr><td>43</td><td>No </td><td><a href='https://www.imdb.com/title/tt0110413' target='_blank'>Leon</a></td>                 <td>N/A</td><td>N/A</td><td>N/A</td><td>N/A</td>                 <td>N/A</td><td>N/A</td></tr>
+<tr><td>44</td><td>No </td><td><a href='https://www.imdb.com/title/tt9362722' target='_blank'>Spider-Man: Across the Spider-Verse</a></td>                 <td>N/A</td><td>N/A</td><td>N/A</td><td>N/A</td>                 <td>N/A</td><td>N/A</td></tr>
+<tr><td>45</td><td>Yes</td><td><a href='https://www.imdb.com/title/tt0034583' target='_blank'>Casablanca</a></td>                 <td>1942</td><td>8.5</td><td>99%</td><td>Michael Curtiz</td>                 <td>Humphrey Bogart, Ingrid Bergman, Paul Henreid</td><td>Drama, Romance, War</td></tr>
+<tr><td>46</td><td>No </td><td><a href='https://www.imdb.com/title/tt0114814' target='_blank'>The Usual Suspects</a></td>                 <td>N/A</td><td>N/A</td><td>N/A</td><td>N/A</td>                 <td>N/A</td><td>N/A</td></tr>
+<tr><td>47</td><td>No </td><td><a href='https://www.imdb.com/title/tt1675434' target='_blank'>Untouchable</a></td>                 <td>N/A</td><td>N/A</td><td>N/A</td><td>N/A</td>                 <td>N/A</td><td>N/A</td></tr>
+<tr><td>48</td><td>Yes</td><td><a href='https://www.imdb.com/title/tt0095765' target='_blank'>Cinema Paradiso</a></td>                 <td>1988</td><td>8.5</td><td>90%</td><td>Giuseppe Tornatore</td>                 <td>Philippe Noiret, Enzo Cannavale, Antonella Attili</td><td>Drama, Romance</td></tr>
+<tr><td>49</td><td>No </td><td><a href='https://www.imdb.com/title/tt0078748' target='_blank'>Alien</a></td>                 <td>N/A</td><td>N/A</td><td>N/A</td><td>N/A</td>                 <td>N/A</td><td>N/A</td></tr>
+<tr><td>50</td><td>Yes</td><td><a href='https://www.imdb.com/title/tt0027977' target='_blank'>Modern Times</a></td>                 <td>1936</td><td>8.5</td><td>98%</td><td>Charles Chaplin</td>                 <td>Charles Chaplin, Paulette Goddard, Henry Bergman</td><td>Comedy, Drama, Romance</td></tr>
+<tr><td>51</td><td>No </td><td><a href='https://www.imdb.com/title/tt0047396' target='_blank'>Rear Window</a></td>                 <td>N/A</td><td>N/A</td><td>N/A</td><td>N/A</td>                 <td>N/A</td><td>N/A</td></tr>
+<tr><td>52</td><td>No </td><td><a href='https://www.imdb.com/title/tt0064116' target='_blank'>Once Upon a Time in the West</a></td>                 <td>N/A</td><td>N/A</td><td>N/A</td><td>N/A</td>                 <td>N/A</td><td>N/A</td></tr>
+<tr><td>53</td><td>Yes</td><td><a href='https://www.imdb.com/title/tt1853728' target='_blank'>Django Unchained</a></td>                 <td>2012</td><td>8.4</td><td>87%</td><td>Quentin Tarantino</td>                 <td>Jamie Foxx, Christoph Waltz, Leonardo DiCaprio</td><td>Drama, Western</td></tr>
+<tr><td>54</td><td>Yes</td><td><a href='https://www.imdb.com/title/tt0021749' target='_blank'>City Lights</a></td>                 <td>1931</td><td>8.5</td><td>95%</td><td>Charles Chaplin</td>                 <td>Charles Chaplin, Virginia Cherrill, Florence Lee</td><td>Comedy, Drama, Romance</td></tr>
+<tr><td>55</td><td>No </td><td><a href='https://www.imdb.com/title/tt0078788' target='_blank'>Apocalypse Now</a></td>                 <td>N/A</td><td>N/A</td><td>N/A</td><td>N/A</td>                 <td>N/A</td><td>N/A</td></tr>
+<tr><td>56</td><td>No </td><td><a href='https://www.imdb.com/title/tt15239678' target='_blank'>Dune: Part Two</a></td>                 <td>N/A</td><td>N/A</td><td>N/A</td><td>N/A</td>                 <td>N/A</td><td>N/A</td></tr>
+<tr><td>57</td><td>No </td><td><a href='https://www.imdb.com/title/tt0910970' target='_blank'>WALL·E</a></td>                 <td>N/A</td><td>N/A</td><td>N/A</td><td>N/A</td>                 <td>N/A</td><td>N/A</td></tr>
+<tr><td>58</td><td>No </td><td><a href='https://www.imdb.com/title/tt0209144' target='_blank'>Memento</a></td>                 <td>N/A</td><td>N/A</td><td>N/A</td><td>N/A</td>                 <td>N/A</td><td>N/A</td></tr>
+<tr><td>59</td><td>Yes</td><td><a href='https://www.imdb.com/title/tt0082971' target='_blank'>Raiders of the Lost Ark</a></td>                 <td>1981</td><td>8.4</td><td>93%</td><td>Steven Spielberg</td>                 <td>Harrison Ford, Karen Allen, Paul Freeman</td><td>Action, Adventure</td></tr>
+<tr><td>60</td><td>No </td><td><a href='https://www.imdb.com/title/tt0405094' target='_blank'>The Lives of Others</a></td>                 <td>N/A</td><td>N/A</td><td>N/A</td><td>N/A</td>                 <td>N/A</td><td>N/A</td></tr>
+<tr><td>61</td><td>No </td><td><a href='https://www.imdb.com/title/tt4154756' target='_blank'>Avengers: Infinity War</a></td>                 <td>N/A</td><td>N/A</td><td>N/A</td><td>N/A</td>                 <td>N/A</td><td>N/A</td></tr>
+<tr><td>62</td><td>No </td><td><a href='https://www.imdb.com/title/tt0043014' target='_blank'>Sunset Blvd.</a></td>                 <td>N/A</td><td>N/A</td><td>N/A</td><td>N/A</td>                 <td>N/A</td><td>N/A</td></tr>
+<tr><td>63</td><td>No </td><td><a href='https://www.imdb.com/title/tt4633694' target='_blank'>Spider-Man: Into the Spider-Verse</a></td>                 <td>N/A</td><td>N/A</td><td>N/A</td><td>N/A</td>                 <td>N/A</td><td>N/A</td></tr>
+<tr><td>64</td><td>No </td><td><a href='https://www.imdb.com/title/tt0051201' target='_blank'>Witness for the Prosecution</a></td>                 <td>N/A</td><td>N/A</td><td>N/A</td><td>N/A</td>                 <td>N/A</td><td>N/A</td></tr>
+<tr><td>65</td><td>No </td><td><a href='https://www.imdb.com/title/tt0050825' target='_blank'>Paths of Glory</a></td>                 <td>N/A</td><td>N/A</td><td>N/A</td><td>N/A</td>                 <td>N/A</td><td>N/A</td></tr>
+<tr><td>66</td><td>Yes</td><td><a href='https://www.imdb.com/title/tt0081505' target='_blank'>The Shining</a></td>                 <td>1980</td><td>8.4</td><td>82%</td><td>Stanley Kubrick</td>                 <td>Jack Nicholson, Shelley Duvall, Danny Lloyd</td><td>Drama, Horror</td></tr>
+<tr><td>67</td><td>No </td><td><a href='https://www.imdb.com/title/tt0032553' target='_blank'>The Great Dictator</a></td>                 <td>N/A</td><td>N/A</td><td>N/A</td><td>N/A</td>                 <td>N/A</td><td>N/A</td></tr>
+<tr><td>68</td><td>No </td><td><a href='https://www.imdb.com/title/tt23849204' target='_blank'>12th Fail</a></td>                 <td>N/A</td><td>N/A</td><td>N/A</td><td>N/A</td>                 <td>N/A</td><td>N/A</td></tr>
+<tr><td>69</td><td>No </td><td><a href='https://www.imdb.com/title/tt0361748' target='_blank'>Inglourious Basterds</a></td>                 <td>N/A</td><td>N/A</td><td>N/A</td><td>N/A</td>                 <td>N/A</td><td>N/A</td></tr>
+<tr><td>70</td><td>No </td><td><a href='https://www.imdb.com/title/tt0090605' target='_blank'>Aliens</a></td>                 <td>N/A</td><td>N/A</td><td>N/A</td><td>N/A</td>                 <td>N/A</td><td>N/A</td></tr>
+<tr><td>71</td><td>No </td><td><a href='https://www.imdb.com/title/tt1345836' target='_blank'>The Dark Knight Rises</a></td>                 <td>N/A</td><td>N/A</td><td>N/A</td><td>N/A</td>                 <td>N/A</td><td>N/A</td></tr>
+<tr><td>72</td><td>No </td><td><a href='https://www.imdb.com/title/tt2380307' target='_blank'>Coco</a></td>                 <td>N/A</td><td>N/A</td><td>N/A</td><td>N/A</td>                 <td>N/A</td><td>N/A</td></tr>
+<tr><td>73</td><td>Yes</td><td><a href='https://www.imdb.com/title/tt0086879' target='_blank'>Amadeus</a></td>                 <td>1984</td><td>8.4</td><td>89%</td><td>Milos Forman</td>                 <td>F. Murray Abraham, Tom Hulce, Elizabeth Berridge</td><td>Biography, Drama, Music</td></tr>
+<tr><td>74</td><td>No </td><td><a href='https://www.imdb.com/title/tt0114709' target='_blank'>Toy Story</a></td>                 <td>N/A</td><td>N/A</td><td>N/A</td><td>N/A</td>                 <td>N/A</td><td>N/A</td></tr>
+<tr><td>75</td><td>No </td><td><a href='https://www.imdb.com/title/tt4154796' target='_blank'>Avengers: Endgame</a></td>                 <td>N/A</td><td>N/A</td><td>N/A</td><td>N/A</td>                 <td>N/A</td><td>N/A</td></tr>
+<tr><td>76</td><td>No </td><td><a href='https://www.imdb.com/title/tt0119217' target='_blank'>Good Will Hunting</a></td>                 <td>N/A</td><td>N/A</td><td>N/A</td><td>N/A</td>                 <td>N/A</td><td>N/A</td></tr>
+<tr><td>77</td><td>No </td><td><a href='https://www.imdb.com/title/tt0364569' target='_blank'>Oldboy</a></td>                 <td>N/A</td><td>N/A</td><td>N/A</td><td>N/A</td>                 <td>N/A</td><td>N/A</td></tr>
+<tr><td>78</td><td>Yes</td><td><a href='https://www.imdb.com/title/tt0057012' target='_blank'>Dr. Strangelove or: How I Learned to Stop Worrying and Love the Bomb</a></td>                 <td>1964</td><td>8.4</td><td>89%</td><td>Stanley Kubrick</td>                 <td>Peter Sellers, George C. Scott, Sterling Hayden</td><td>Comedy, War</td></tr>
+<tr><td>79</td><td>Yes</td><td><a href='https://www.imdb.com/title/tt0082096' target='_blank'>Das Boot</a></td>                 <td>1981</td><td>8.4</td><td>98%</td><td>Wolfgang Petersen</td>                 <td>Jürgen Prochnow, Herbert Grönemeyer, Klaus Wennemann</td><td>Drama, War</td></tr>
+<tr><td>80</td><td>No </td><td><a href='https://www.imdb.com/title/tt0112573' target='_blank'>Braveheart</a></td>                 <td>N/A</td><td>N/A</td><td>N/A</td><td>N/A</td>                 <td>N/A</td><td>N/A</td></tr>
+<tr><td>81</td><td>No </td><td><a href='https://www.imdb.com/title/tt0169547' target='_blank'>American Beauty</a></td>                 <td>N/A</td><td>N/A</td><td>N/A</td><td>N/A</td>                 <td>N/A</td><td>N/A</td></tr>
+<tr><td>82</td><td>No </td><td><a href='https://www.imdb.com/title/tt0119698' target='_blank'>Princess Mononoke</a></td>                 <td>N/A</td><td>N/A</td><td>N/A</td><td>N/A</td>                 <td>N/A</td><td>N/A</td></tr>
+<tr><td>83</td><td>No </td><td><a href='https://www.imdb.com/title/tt0057565' target='_blank'>High and Low</a></td>                 <td>N/A</td><td>N/A</td><td>N/A</td><td>N/A</td>                 <td>N/A</td><td>N/A</td></tr>
+<tr><td>84</td><td>No </td><td><a href='https://www.imdb.com/title/tt5311514' target='_blank'>Your Name.</a></td>                 <td>N/A</td><td>N/A</td><td>N/A</td><td>N/A</td>                 <td>N/A</td><td>N/A</td></tr>
+<tr><td>85</td><td>No </td><td><a href='https://www.imdb.com/title/tt1187043' target='_blank'>3 Idiots</a></td>                 <td>N/A</td><td>N/A</td><td>N/A</td><td>N/A</td>                 <td>N/A</td><td>N/A</td></tr>
+<tr><td>86</td><td>No </td><td><a href='https://www.imdb.com/title/tt7286456' target='_blank'>Joker</a></td>                 <td>N/A</td><td>N/A</td><td>N/A</td><td>N/A</td>                 <td>N/A</td><td>N/A</td></tr>
+<tr><td>87</td><td>Yes</td><td><a href='https://www.imdb.com/title/tt0087843' target='_blank'>Once Upon a Time in America</a></td>                 <td>1984</td><td>8.3</td><td>87%</td><td>Sergio Leone</td>                 <td>Robert De Niro, James Woods, Elizabeth McGovern</td><td>Crime, Drama</td></tr>
+<tr><td>88</td><td>No </td><td><a href='https://www.imdb.com/title/tt8267604' target='_blank'>Capernaum</a></td>                 <td>N/A</td><td>N/A</td><td>N/A</td><td>N/A</td>                 <td>N/A</td><td>N/A</td></tr>
+<tr><td>89</td><td>No </td><td><a href='https://www.imdb.com/title/tt0045152' target='_blank'>Singin’ in the Rain</a></td>                 <td>N/A</td><td>N/A</td><td>N/A</td><td>N/A</td>                 <td>N/A</td><td>N/A</td></tr>
+<tr><td>90</td><td>Yes</td><td><a href='https://www.imdb.com/title/tt0091251' target='_blank'>Come and See</a></td>                 <td>1985</td><td>8.4</td><td>90%</td><td>Elem Klimov</td>                 <td>Aleksey Kravchenko, Olga Mironova, Liubomiras Laucevicius</td><td>Drama, Thriller, War</td></tr>
+<tr><td>91</td><td>No </td><td><a href='https://www.imdb.com/title/tt0180093' target='_blank'>Requiem for a Dream</a></td>                 <td>N/A</td><td>N/A</td><td>N/A</td><td>N/A</td>                 <td>N/A</td><td>N/A</td></tr>
+<tr><td>92</td><td>Yes</td><td><a href='https://www.imdb.com/title/tt0086190' target='_blank'>Star Wars: Return of the Jedi</a></td>                 <td>1983</td><td>8.3</td><td>83%</td><td>Richard Marquand</td>                 <td>Mark Hamill, Harrison Ford, Carrie Fisher</td><td>Action, Adventure, Fantasy</td></tr>
+<tr><td>93</td><td>No </td><td><a href='https://www.imdb.com/title/tt0435761' target='_blank'>Toy Story 3</a></td>                 <td>N/A</td><td>N/A</td><td>N/A</td><td>N/A</td>                 <td>N/A</td><td>N/A</td></tr>
+<tr><td>94</td><td>No </td><td><a href='https://www.imdb.com/title/tt0252488' target='_blank'>The Chaos Class Failed the Class</a></td>                 <td>N/A</td><td>N/A</td><td>N/A</td><td>N/A</td>                 <td>N/A</td><td>N/A</td></tr>
+<tr><td>95</td><td>No </td><td><a href='https://www.imdb.com/title/tt2106476' target='_blank'>The Hunt</a></td>                 <td>N/A</td><td>N/A</td><td>N/A</td><td>N/A</td>                 <td>N/A</td><td>N/A</td></tr>
+<tr><td>96</td><td>No </td><td><a href='https://www.imdb.com/title/tt0044741' target='_blank'>Ikiru</a></td>                 <td>N/A</td><td>N/A</td><td>N/A</td><td>N/A</td>                 <td>N/A</td><td>N/A</td></tr>
+<tr><td>97</td><td>No </td><td><a href='https://www.imdb.com/title/tt0338013' target='_blank'>Eternal Sunshine of the Spotless Mind</a></td>                 <td>N/A</td><td>N/A</td><td>N/A</td><td>N/A</td>                 <td>N/A</td><td>N/A</td></tr>
+<tr><td>98</td><td>No </td><td><a href='https://www.imdb.com/title/tt0062622' target='_blank'>2001: A Space Odyssey</a></td>                 <td>N/A</td><td>N/A</td><td>N/A</td><td>N/A</td>                 <td>N/A</td><td>N/A</td></tr>
+<tr><td>99</td><td>No </td><td><a href='https://www.imdb.com/title/tt1255953' target='_blank'>Incendies</a></td>                 <td>N/A</td><td>N/A</td><td>N/A</td><td>N/A</td>                 <td>N/A</td><td>N/A</td></tr>
+<tr><td>100</td><td>No </td><td><a href='https://www.imdb.com/title/tt0105236' target='_blank'>Reservoir Dogs</a></td>                 <td>N/A</td><td>N/A</td><td>N/A</td><td>N/A</td>                 <td>N/A</td><td>N/A</td></tr>
+<tr><td>101</td><td>No </td><td><a href='https://www.imdb.com/title/tt0053604' target='_blank'>The Apartment</a></td>                 <td>N/A</td><td>N/A</td><td>N/A</td><td>N/A</td>                 <td>N/A</td><td>N/A</td></tr>
+<tr><td>102</td><td>Yes</td><td><a href='https://www.imdb.com/title/tt0056172' target='_blank'>Lawrence of Arabia</a></td>                 <td>1962</td><td>8.3</td><td>94%</td><td>David Lean</td>                 <td>Peter O'Toole, Alec Guinness, Anthony Quinn</td><td>Adventure, Biography, Drama</td></tr>
+<tr><td>103</td><td>Yes</td><td><a href='https://www.imdb.com/title/tt0086250' target='_blank'>Scarface</a></td>                 <td>1983</td><td>8.3</td><td>79%</td><td>Brian De Palma</td>                 <td>Al Pacino, Michelle Pfeiffer, Steven Bauer</td><td>Crime, Drama</td></tr>
+<tr><td>104</td><td>No </td><td><a href='https://www.imdb.com/title/tt0036775' target='_blank'>Double Indemnity</a></td>                 <td>N/A</td><td>N/A</td><td>N/A</td><td>N/A</td>                 <td>N/A</td><td>N/A</td></tr>
+<tr><td>105</td><td>No </td><td><a href='https://www.imdb.com/title/tt0113277' target='_blank'>Heat</a></td>                 <td>N/A</td><td>N/A</td><td>N/A</td><td>N/A</td>                 <td>N/A</td><td>N/A</td></tr>
+<tr><td>106</td><td>No </td><td><a href='https://www.imdb.com/title/tt0053125' target='_blank'>North by Northwest</a></td>                 <td>N/A</td><td>N/A</td><td>N/A</td><td>N/A</td>                 <td>N/A</td><td>N/A</td></tr>
+<tr><td>107</td><td>No </td><td><a href='https://www.imdb.com/title/tt1049413' target='_blank'>Up</a></td>                 <td>N/A</td><td>N/A</td><td>N/A</td><td>N/A</td>                 <td>N/A</td><td>N/A</td></tr>
+<tr><td>108</td><td>No </td><td><a href='https://www.imdb.com/title/tt0033467' target='_blank'>Citizen Kane</a></td>                 <td>N/A</td><td>N/A</td><td>N/A</td><td>N/A</td>                 <td>N/A</td><td>N/A</td></tr>
+<tr><td>109</td><td>Yes</td><td><a href='https://www.imdb.com/title/tt0022100' target='_blank'>M</a></td>                 <td>1931</td><td>8.3</td><td>100%</td><td>Fritz Lang</td>                 <td>Peter Lorre, Ellen Widmann, Inge Landgut</td><td>Crime, Mystery, Thriller</td></tr>
+<tr><td>110</td><td>Yes</td><td><a href='https://www.imdb.com/title/tt0093058' target='_blank'>Full Metal Jacket</a></td>                 <td>1987</td><td>8.3</td><td>91%</td><td>Stanley Kubrick</td>                 <td>Matthew Modine, R. Lee Ermey, Vincent D'Onofrio</td><td>Drama, War</td></tr>
+<tr><td>111</td><td>Yes</td><td><a href='https://www.imdb.com/title/tt0052357' target='_blank'>Vertigo</a></td>                 <td>1958</td><td>8.3</td><td>92%</td><td>Alfred Hitchcock</td>                 <td>James Stewart, Kim Novak, Barbara Bel Geddes</td><td>Mystery, Romance, Thriller</td></tr>
+<tr><td>112</td><td>No </td><td><a href='https://www.imdb.com/title/tt0211915' target='_blank'>Amélie</a></td>                 <td>N/A</td><td>N/A</td><td>N/A</td><td>N/A</td>                 <td>N/A</td><td>N/A</td></tr>
+<tr><td>113</td><td>No </td><td><a href='https://www.imdb.com/title/tt1832382' target='_blank'>A Separation</a></td>                 <td>N/A</td><td>N/A</td><td>N/A</td><td>N/A</td>                 <td>N/A</td><td>N/A</td></tr>
+<tr><td>114</td><td>No </td><td><a href='https://www.imdb.com/title/tt0056592' target='_blank'>To Kill a Mockingbird</a></td>                 <td>N/A</td><td>N/A</td><td>N/A</td><td>N/A</td>                 <td>N/A</td><td>N/A</td></tr>
+<tr><td>115</td><td>No </td><td><a href='https://www.imdb.com/title/tt0986264' target='_blank'>Like Stars on Earth</a></td>                 <td>N/A</td><td>N/A</td><td>N/A</td><td>N/A</td>                 <td>N/A</td><td>N/A</td></tr>
+<tr><td>116</td><td>Yes</td><td><a href='https://www.imdb.com/title/tt0066921' target='_blank'>A Clockwork Orange</a></td>                 <td>1971</td><td>8.3</td><td>88%</td><td>Stanley Kubrick</td>                 <td>Malcolm McDowell, Patrick Magee, Michael Bates</td><td>Crime, Sci-Fi</td></tr>
+<tr><td>117</td><td>Yes</td><td><a href='https://www.imdb.com/title/tt0095016' target='_blank'>Die Hard</a></td>                 <td>1988</td><td>8.2</td><td>94%</td><td>John McTiernan</td>                 <td>Bruce Willis, Alan Rickman, Bonnie Bedelia</td><td>Action, Thriller</td></tr>
+<tr><td>118</td><td>No </td><td><a href='https://www.imdb.com/title/tt0097576' target='_blank'>Indiana Jones and the Last Crusade</a></td>                 <td>N/A</td><td>N/A</td><td>N/A</td><td>N/A</td>                 <td>N/A</td><td>N/A</td></tr>
+<tr><td>119</td><td>No </td><td><a href='https://www.imdb.com/title/tt0070735' target='_blank'>The Sting</a></td>                 <td>N/A</td><td>N/A</td><td>N/A</td><td>N/A</td>                 <td>N/A</td><td>N/A</td></tr>
+<tr><td>120</td><td>No </td><td><a href='https://www.imdb.com/title/tt15398776' target='_blank'>Oppenheimer</a></td>                 <td>N/A</td><td>N/A</td><td>N/A</td><td>N/A</td>                 <td>N/A</td><td>N/A</td></tr>
+<tr><td>121</td><td>Yes</td><td><a href='https://www.imdb.com/title/tt0017136' target='_blank'>Metropolis</a></td>                 <td>1927</td><td>8.3</td><td>97%</td><td>Fritz Lang</td>                 <td>Brigitte Helm, Alfred Abel, Gustav Fröhlich</td><td>Drama, Sci-Fi</td></tr>
+<tr><td>122</td><td>No </td><td><a href='https://www.imdb.com/title/tt0208092' target='_blank'>Snatch</a></td>                 <td>N/A</td><td>N/A</td><td>N/A</td><td>N/A</td>                 <td>N/A</td><td>N/A</td></tr>
+<tr><td>123</td><td>No </td><td><a href='https://www.imdb.com/title/tt8579674' target='_blank'>1917</a></td>                 <td>N/A</td><td>N/A</td><td>N/A</td><td>N/A</td>                 <td>N/A</td><td>N/A</td></tr>
+<tr><td>124</td><td>No </td><td><a href='https://www.imdb.com/title/tt0119488' target='_blank'>L.A. Confidential</a></td>                 <td>N/A</td><td>N/A</td><td>N/A</td><td>N/A</td>                 <td>N/A</td><td>N/A</td></tr>
+<tr><td>125</td><td>No </td><td><a href='https://www.imdb.com/title/tt0040522' target='_blank'>Bicycle Thieves</a></td>                 <td>N/A</td><td>N/A</td><td>N/A</td><td>N/A</td>                 <td>N/A</td><td>N/A</td></tr>
+<tr><td>126</td><td>No </td><td><a href='https://www.imdb.com/title/tt0363163' target='_blank'>Downfall</a></td>                 <td>N/A</td><td>N/A</td><td>N/A</td><td>N/A</td>                 <td>N/A</td><td>N/A</td></tr>
+<tr><td>127</td><td>No </td><td><a href='https://www.imdb.com/title/tt5074352' target='_blank'>Dangal</a></td>                 <td>N/A</td><td>N/A</td><td>N/A</td><td>N/A</td>                 <td>N/A</td><td>N/A</td></tr>
+<tr><td>128</td><td>No </td><td><a href='https://www.imdb.com/title/tt0993846' target='_blank'>The Wolf of Wall Street</a></td>                 <td>N/A</td><td>N/A</td><td>N/A</td><td>N/A</td>                 <td>N/A</td><td>N/A</td></tr>
+<tr><td>129</td><td>No </td><td><a href='https://www.imdb.com/title/tt8503618' target='_blank'>Hamilton</a></td>                 <td>N/A</td><td>N/A</td><td>N/A</td><td>N/A</td>                 <td>N/A</td><td>N/A</td></tr>
+<tr><td>130</td><td>No </td><td><a href='https://www.imdb.com/title/tt0075314' target='_blank'>Taxi Driver</a></td>                 <td>N/A</td><td>N/A</td><td>N/A</td><td>N/A</td>                 <td>N/A</td><td>N/A</td></tr>
+<tr><td>131</td><td>No </td><td><a href='https://www.imdb.com/title/tt6966692' target='_blank'>Green Book</a></td>                 <td>N/A</td><td>N/A</td><td>N/A</td><td>N/A</td>                 <td>N/A</td><td>N/A</td></tr>
+<tr><td>132</td><td>No </td><td><a href='https://www.imdb.com/title/tt0372784' target='_blank'>Batman Begins</a></td>                 <td>N/A</td><td>N/A</td><td>N/A</td><td>N/A</td>                 <td>N/A</td><td>N/A</td></tr>
+<tr><td>133</td><td>No </td><td><a href='https://www.imdb.com/title/tt0059578' target='_blank'>For a Few Dollars More</a></td>                 <td>N/A</td><td>N/A</td><td>N/A</td><td>N/A</td>                 <td>N/A</td><td>N/A</td></tr>
+<tr><td>134</td><td>No </td><td><a href='https://www.imdb.com/title/tt0120382' target='_blank'>The Truman Show</a></td>                 <td>N/A</td><td>N/A</td><td>N/A</td><td>N/A</td>                 <td>N/A</td><td>N/A</td></tr>
+<tr><td>135</td><td>No </td><td><a href='https://www.imdb.com/title/tt0055031' target='_blank'>Judgment at Nuremberg</a></td>                 <td>N/A</td><td>N/A</td><td>N/A</td><td>N/A</td>                 <td>N/A</td><td>N/A</td></tr>
+<tr><td>136</td><td>Yes</td><td><a href='https://www.imdb.com/title/tt0053291' target='_blank'>Some Like It Hot</a></td>                 <td>1959</td><td>8.2</td><td>94%</td><td>Billy Wilder</td>                 <td>Marilyn Monroe, Tony Curtis, Jack Lemmon</td><td>Comedy, Music, Romance</td></tr>
+<tr><td>137</td><td>No </td><td><a href='https://www.imdb.com/title/tt1130884' target='_blank'>Shutter Island</a></td>                 <td>N/A</td><td>N/A</td><td>N/A</td><td>N/A</td>                 <td>N/A</td><td>N/A</td></tr>
+<tr><td>138</td><td>No </td><td><a href='https://www.imdb.com/title/tt0012349' target='_blank'>The Kid</a></td>                 <td>N/A</td><td>N/A</td><td>N/A</td><td>N/A</td>                 <td>N/A</td><td>N/A</td></tr>
+<tr><td>139</td><td>No </td><td><a href='https://www.imdb.com/title/tt10272386' target='_blank'>The Father</a></td>                 <td>N/A</td><td>N/A</td><td>N/A</td><td>N/A</td>                 <td>N/A</td><td>N/A</td></tr>
+<tr><td>140</td><td>No </td><td><a href='https://www.imdb.com/title/tt0042192' target='_blank'>All About Eve</a></td>                 <td>N/A</td><td>N/A</td><td>N/A</td><td>N/A</td>                 <td>N/A</td><td>N/A</td></tr>
+<tr><td>141</td><td>No </td><td><a href='https://www.imdb.com/title/tt0107290' target='_blank'>Jurassic Park</a></td>                 <td>N/A</td><td>N/A</td><td>N/A</td><td>N/A</td>                 <td>N/A</td><td>N/A</td></tr>
+<tr><td>142</td><td>No </td><td><a href='https://www.imdb.com/title/tt0469494' target='_blank'>There Will Be Blood</a></td>                 <td>N/A</td><td>N/A</td><td>N/A</td><td>N/A</td>                 <td>N/A</td><td>N/A</td></tr>
+<tr><td>143</td><td>No </td><td><a href='https://www.imdb.com/title/tt0167404' target='_blank'>The Sixth Sense</a></td>                 <td>N/A</td><td>N/A</td><td>N/A</td><td>N/A</td>                 <td>N/A</td><td>N/A</td></tr>
+<tr><td>144</td><td>No </td><td><a href='https://www.imdb.com/title/tt0112641' target='_blank'>Casino</a></td>                 <td>N/A</td><td>N/A</td><td>N/A</td><td>N/A</td>                 <td>N/A</td><td>N/A</td></tr>
+<tr><td>145</td><td>Yes</td><td><a href='https://www.imdb.com/title/tt0089881' target='_blank'>Ran</a></td>                 <td>1985</td><td>8.2</td><td>96%</td><td>Akira Kurosawa</td>                 <td>Tatsuya Nakadai, Akira Terao, Jinpachi Nezu</td><td>Action, Drama, War</td></tr>
+<tr><td>146</td><td>No </td><td><a href='https://www.imdb.com/title/tt1745960' target='_blank'>Top Gun: Maverick</a></td>                 <td>N/A</td><td>N/A</td><td>N/A</td><td>N/A</td>                 <td>N/A</td><td>N/A</td></tr>
+<tr><td>147</td><td>No </td><td><a href='https://www.imdb.com/title/tt0477348' target='_blank'>No Country for Old Men</a></td>                 <td>N/A</td><td>N/A</td><td>N/A</td><td>N/A</td>                 <td>N/A</td><td>N/A</td></tr>
+<tr><td>148</td><td>Yes</td><td><a href='https://www.imdb.com/title/tt0084787' target='_blank'>The Thing</a></td>                 <td>1982</td><td>8.2</td><td>84%</td><td>John Carpenter</td>                 <td>Kurt Russell, Wilford Brimley, Keith David</td><td>Horror, Mystery, Sci-Fi</td></tr>
+<tr><td>149</td><td>No </td><td><a href='https://www.imdb.com/title/tt0457430' target='_blank'>Pan’s Labyrinth</a></td>                 <td>N/A</td><td>N/A</td><td>N/A</td><td>N/A</td>                 <td>N/A</td><td>N/A</td></tr>
+<tr><td>150</td><td>No </td><td><a href='https://www.imdb.com/title/tt0105695' target='_blank'>Unforgiven</a></td>                 <td>N/A</td><td>N/A</td><td>N/A</td><td>N/A</td>                 <td>N/A</td><td>N/A</td></tr>
+<tr><td>151</td><td>No </td><td><a href='https://www.imdb.com/title/tt0268978' target='_blank'>A Beautiful Mind</a></td>                 <td>N/A</td><td>N/A</td><td>N/A</td><td>N/A</td>                 <td>N/A</td><td>N/A</td></tr>
+<tr><td>152</td><td>No </td><td><a href='https://www.imdb.com/title/tt0266697' target='_blank'>Kill Bill: Vol. 1</a></td>                 <td>N/A</td><td>N/A</td><td>N/A</td><td>N/A</td>                 <td>N/A</td><td>N/A</td></tr>
+<tr><td>153</td><td>No </td><td><a href='https://www.imdb.com/title/tt0040897' target='_blank'>The Treasure of the Sierra Madre</a></td>                 <td>N/A</td><td>N/A</td><td>N/A</td><td>N/A</td>                 <td>N/A</td><td>N/A</td></tr>
+<tr><td>154</td><td>No </td><td><a href='https://www.imdb.com/title/tt1392214' target='_blank'>Prisoners</a></td>                 <td>N/A</td><td>N/A</td><td>N/A</td><td>N/A</td>                 <td>N/A</td><td>N/A</td></tr>
+<tr><td>155</td><td>No </td><td><a href='https://www.imdb.com/title/tt0055630' target='_blank'>Yojimbo</a></td>                 <td>N/A</td><td>N/A</td><td>N/A</td><td>N/A</td>                 <td>N/A</td><td>N/A</td></tr>
+<tr><td>156</td><td>No </td><td><a href='https://www.imdb.com/title/tt0266543' target='_blank'>Finding Nemo</a></td>                 <td>N/A</td><td>N/A</td><td>N/A</td><td>N/A</td>                 <td>N/A</td><td>N/A</td></tr>
+<tr><td>157</td><td>No </td><td><a href='https://www.imdb.com/title/tt0347149' target='_blank'>Howl's Moving Castle</a></td>                 <td>N/A</td><td>N/A</td><td>N/A</td><td>N/A</td>                 <td>N/A</td><td>N/A</td></tr>
+<tr><td>158</td><td>No </td><td><a href='https://www.imdb.com/title/tt0057115' target='_blank'>The Great Escape</a></td>                 <td>N/A</td><td>N/A</td><td>N/A</td><td>N/A</td>                 <td>N/A</td><td>N/A</td></tr>
+<tr><td>159</td><td>No </td><td><a href='https://www.imdb.com/title/tt0071853' target='_blank'>Monty Python and the Holy Grail</a></td>                 <td>N/A</td><td>N/A</td><td>N/A</td><td>N/A</td>                 <td>N/A</td><td>N/A</td></tr>
+<tr><td>160</td><td>Yes</td><td><a href='https://www.imdb.com/title/tt0080678' target='_blank'>The Elephant Man</a></td>                 <td>1980</td><td>8.2</td><td>92%</td><td>David Lynch</td>                 <td>Anthony Hopkins, John Hurt, Anne Bancroft</td><td>Biography, Drama</td></tr>
+<tr><td>161</td><td>No </td><td><a href='https://www.imdb.com/title/tt0046912' target='_blank'>Dial M for Murder</a></td>                 <td>N/A</td><td>N/A</td><td>N/A</td><td>N/A</td>                 <td>N/A</td><td>N/A</td></tr>
+<tr><td>162</td><td>No </td><td><a href='https://www.imdb.com/title/tt4729430' target='_blank'>Klaus</a></td>                 <td>N/A</td><td>N/A</td><td>N/A</td><td>N/A</td>                 <td>N/A</td><td>N/A</td></tr>
+<tr><td>163</td><td>No </td><td><a href='https://www.imdb.com/title/tt0031381' target='_blank'>Gone with the Wind</a></td>                 <td>N/A</td><td>N/A</td><td>N/A</td><td>N/A</td>                 <td>N/A</td><td>N/A</td></tr>
+<tr><td>164</td><td>Yes</td><td><a href='https://www.imdb.com/title/tt0042876' target='_blank'>Rashomon</a></td>                 <td>1950</td><td>8.2</td><td>98%</td><td>Akira Kurosawa</td>                 <td>Toshirô Mifune, Machiko Kyô, Masayuki Mori</td><td>Crime, Drama, Mystery</td></tr>
+<tr><td>165</td><td>Yes</td><td><a href='https://www.imdb.com/title/tt0071315' target='_blank'>Chinatown</a></td>                 <td>1974</td><td>8.2</td><td>99%</td><td>Roman Polanski</td>                 <td>Jack Nicholson, Faye Dunaway, John Huston</td><td>Drama, Mystery, Thriller</td></tr>
+<tr><td>166</td><td>No </td><td><a href='https://www.imdb.com/title/tt1305806' target='_blank'>The Secret in Their Eyes</a></td>                 <td>N/A</td><td>N/A</td><td>N/A</td><td>N/A</td>                 <td>N/A</td><td>N/A</td></tr>
+<tr><td>167</td><td>No </td><td><a href='https://www.imdb.com/title/tt0120735' target='_blank'>Lock, Stock and Two Smoking Barrels</a></td>                 <td>N/A</td><td>N/A</td><td>N/A</td><td>N/A</td>                 <td>N/A</td><td>N/A</td></tr>
+<tr><td>168</td><td>No </td><td><a href='https://www.imdb.com/title/tt0434409' target='_blank'>V for Vendetta</a></td>                 <td>N/A</td><td>N/A</td><td>N/A</td><td>N/A</td>                 <td>N/A</td><td>N/A</td></tr>
+<tr><td>169</td><td>No </td><td><a href='https://www.imdb.com/title/tt2096673' target='_blank'>Inside Out</a></td>                 <td>N/A</td><td>N/A</td><td>N/A</td><td>N/A</td>                 <td>N/A</td><td>N/A</td></tr>
+<tr><td>170</td><td>No </td><td><a href='https://www.imdb.com/title/tt0120735' target='_blank'>Lock, Stock and Two Smoking Barrels</a></td>                 <td>N/A</td><td>N/A</td><td>N/A</td><td>N/A</td>                 <td>N/A</td><td>N/A</td></tr>
+<tr><td>171</td><td>No </td><td><a href='https://www.imdb.com/title/tt0050212' target='_blank'>The Bridge on the River Kwai</a></td>                 <td>N/A</td><td>N/A</td><td>N/A</td><td>N/A</td>                 <td>N/A</td><td>N/A</td></tr>
+<tr><td>172</td><td>No </td><td><a href='https://www.imdb.com/title/tt0117951' target='_blank'>Trainspotting</a></td>                 <td>N/A</td><td>N/A</td><td>N/A</td><td>N/A</td>                 <td>N/A</td><td>N/A</td></tr>
+<tr><td>173</td><td>No </td><td><a href='https://www.imdb.com/title/tt0264464' target='_blank'>Catch Me If You Can</a></td>                 <td>N/A</td><td>N/A</td><td>N/A</td><td>N/A</td>                 <td>N/A</td><td>N/A</td></tr>
+<tr><td>174</td><td>Yes</td><td><a href='https://www.imdb.com/title/tt0081398' target='_blank'>Raging Bull</a></td>                 <td>1980</td><td>8.1</td><td>93%</td><td>Martin Scorsese</td>                 <td>Robert De Niro, Cathy Moriarty, Joe Pesci</td><td>Biography, Drama, Sport</td></tr>
+<tr><td>175</td><td>No </td><td><a href='https://www.imdb.com/title/tt29623480' target='_blank'>The Wild Robot</a></td>                 <td>N/A</td><td>N/A</td><td>N/A</td><td>N/A</td>                 <td>N/A</td><td>N/A</td></tr>
+<tr><td>176</td><td>No </td><td><a href='https://www.imdb.com/title/tt0116282' target='_blank'>Fargo</a></td>                 <td>N/A</td><td>N/A</td><td>N/A</td><td>N/A</td>                 <td>N/A</td><td>N/A</td></tr>
+<tr><td>177</td><td>No </td><td><a href='https://www.imdb.com/title/tt1291584' target='_blank'>Warrior</a></td>                 <td>N/A</td><td>N/A</td><td>N/A</td><td>N/A</td>                 <td>N/A</td><td>N/A</td></tr>
+<tr><td>178</td><td>No </td><td><a href='https://www.imdb.com/title/tt1201607' target='_blank'>Harry Potter and the Deathly Hallows: Part 2</a></td>                 <td>N/A</td><td>N/A</td><td>N/A</td><td>N/A</td>                 <td>N/A</td><td>N/A</td></tr>
+<tr><td>179</td><td>No </td><td><a href='https://www.imdb.com/title/tt1205489' target='_blank'>Gran Torino</a></td>                 <td>N/A</td><td>N/A</td><td>N/A</td><td>N/A</td>                 <td>N/A</td><td>N/A</td></tr>
+<tr><td>180</td><td>No </td><td><a href='https://www.imdb.com/title/tt0405159' target='_blank'>Million Dollar Baby</a></td>                 <td>N/A</td><td>N/A</td><td>N/A</td><td>N/A</td>                 <td>N/A</td><td>N/A</td></tr>
+<tr><td>181</td><td>No </td><td><a href='https://www.imdb.com/title/tt0052618' target='_blank'>Ben-Hur</a></td>                 <td>N/A</td><td>N/A</td><td>N/A</td><td>N/A</td>                 <td>N/A</td><td>N/A</td></tr>
+<tr><td>182</td><td>Yes</td><td><a href='https://www.imdb.com/title/tt1392190' target='_blank'>Mad Max: Fury Road</a></td>                 <td>2015</td><td>8.1</td><td>97%</td><td>George Miller</td>                 <td>Tom Hardy, Charlize Theron, Nicholas Hoult</td><td>Action, Adventure, Sci-Fi</td></tr>
+<tr><td>183</td><td>No </td><td><a href='https://www.imdb.com/title/tt0096283' target='_blank'>My Neighbour Totoro</a></td>                 <td>N/A</td><td>N/A</td><td>N/A</td><td>N/A</td>                 <td>N/A</td><td>N/A</td></tr>
+<tr><td>184</td><td>No </td><td><a href='https://www.imdb.com/title/tt0072684' target='_blank'>Barry Lyndon</a></td>                 <td>N/A</td><td>N/A</td><td>N/A</td><td>N/A</td>                 <td>N/A</td><td>N/A</td></tr>
+<tr><td>185</td><td>No </td><td><a href='https://www.imdb.com/title/tt10872600' target='_blank'>Spider-Man: No Way Home</a></td>                 <td>N/A</td><td>N/A</td><td>N/A</td><td>N/A</td>                 <td>N/A</td><td>N/A</td></tr>
+<tr><td>186</td><td>No </td><td><a href='https://www.imdb.com/title/tt0097165' target='_blank'>Dead Poets Society</a></td>                 <td>N/A</td><td>N/A</td><td>N/A</td><td>N/A</td>                 <td>N/A</td><td>N/A</td></tr>
+<tr><td>187</td><td>No </td><td><a href='https://www.imdb.com/title/tt0118849' target='_blank'>Children of Heaven</a></td>                 <td>N/A</td><td>N/A</td><td>N/A</td><td>N/A</td>                 <td>N/A</td><td>N/A</td></tr>
+<tr><td>188</td><td>No </td><td><a href='https://www.imdb.com/title/tt2024544' target='_blank'>12 Years a Slave</a></td>                 <td>N/A</td><td>N/A</td><td>N/A</td><td>N/A</td>                 <td>N/A</td><td>N/A</td></tr>
+<tr><td>189</td><td>No </td><td><a href='https://www.imdb.com/title/tt0112471' target='_blank'>Before Sunrise</a></td>                 <td>N/A</td><td>N/A</td><td>N/A</td><td>N/A</td>                 <td>N/A</td><td>N/A</td></tr>
+<tr><td>190</td><td>No </td><td><a href='https://www.imdb.com/title/tt2278388' target='_blank'>The Grand Budapest Hotel</a></td>                 <td>N/A</td><td>N/A</td><td>N/A</td><td>N/A</td>                 <td>N/A</td><td>N/A</td></tr>
+<tr><td>191</td><td>No </td><td><a href='https://www.imdb.com/title/tt2119532' target='_blank'>Hacksaw Ridge</a></td>                 <td>N/A</td><td>N/A</td><td>N/A</td><td>N/A</td>                 <td>N/A</td><td>N/A</td></tr>
+<tr><td>192</td><td>Yes</td><td><a href='https://www.imdb.com/title/tt0083658' target='_blank'>Blade Runner</a></td>                 <td>1982</td><td>8.1</td><td>89%</td><td>Ridley Scott</td>                 <td>Harrison Ford, Rutger Hauer, Sean Young</td><td>Action, Drama, Sci-Fi</td></tr>
+<tr><td>193</td><td>No </td><td><a href='https://www.imdb.com/title/tt2267998' target='_blank'>Gone Girl</a></td>                 <td>N/A</td><td>N/A</td><td>N/A</td><td>N/A</td>                 <td>N/A</td><td>N/A</td></tr>
+<tr><td>194</td><td>No </td><td><a href='https://www.imdb.com/title/tt0353969' target='_blank'>Memories of Murder</a></td>                 <td>N/A</td><td>N/A</td><td>N/A</td><td>N/A</td>                 <td>N/A</td><td>N/A</td></tr>
+<tr><td>195</td><td>No </td><td><a href='https://www.imdb.com/title/tt0382932' target='_blank'>Ratatouille</a></td>                 <td>N/A</td><td>N/A</td><td>N/A</td><td>N/A</td>                 <td>N/A</td><td>N/A</td></tr>
+<tr><td>196</td><td>No </td><td><a href='https://www.imdb.com/title/tt0198781' target='_blank'>Monsters Inc.</a></td>                 <td>N/A</td><td>N/A</td><td>N/A</td><td>N/A</td>                 <td>N/A</td><td>N/A</td></tr>
+<tr><td>197</td><td>No </td><td><a href='https://www.imdb.com/title/tt0107207' target='_blank'>In the Name of the Father</a></td>                 <td>N/A</td><td>N/A</td><td>N/A</td><td>N/A</td>                 <td>N/A</td><td>N/A</td></tr>
+<tr><td>198</td><td>No </td><td><a href='https://www.imdb.com/title/tt0892769' target='_blank'>How to Train Your Dragon</a></td>                 <td>N/A</td><td>N/A</td><td>N/A</td><td>N/A</td>                 <td>N/A</td><td>N/A</td></tr>
+<tr><td>199</td><td>No </td><td><a href='https://www.imdb.com/title/tt3011894' target='_blank'>Wild Tales</a></td>                 <td>N/A</td><td>N/A</td><td>N/A</td><td>N/A</td>                 <td>N/A</td><td>N/A</td></tr>
+<tr><td>200</td><td>Yes</td><td><a href='https://www.imdb.com/title/tt0015864' target='_blank'>The Gold Rush</a></td>                 <td>1925</td><td>8.1</td><td>100%</td><td>Charles Chaplin</td>                 <td>Charles Chaplin, Mack Swain, Tom Murray</td><td>Adventure, Comedy, Drama</td></tr>
+<tr><td>201</td><td>Yes</td><td><a href='https://www.imdb.com/title/tt0015324' target='_blank'>Sherlock Jr.</a></td>                 <td>1924</td><td>8.2</td><td>93%</td><td>Buster Keaton</td>                 <td>Buster Keaton, Kathryn McGuire, Joe Keaton</td><td>Action, Comedy, Romance</td></tr>
+<tr><td>202</td><td>No </td><td><a href='https://www.imdb.com/title/tt0073195' target='_blank'>Jaws</a></td>                 <td>N/A</td><td>N/A</td><td>N/A</td><td>N/A</td>                 <td>N/A</td><td>N/A</td></tr>
+<tr><td>203</td><td>No </td><td><a href='https://www.imdb.com/title/tt0978762' target='_blank'>Mary and Max</a></td>                 <td>N/A</td><td>N/A</td><td>N/A</td><td>N/A</td>                 <td>N/A</td><td>N/A</td></tr>
+<tr><td>204</td><td>No </td><td><a href='https://www.imdb.com/title/tt0077416' target='_blank'>The Deer Hunter</a></td>                 <td>N/A</td><td>N/A</td><td>N/A</td><td>N/A</td>                 <td>N/A</td><td>N/A</td></tr>
+<tr><td>205</td><td>No </td><td><a href='https://www.imdb.com/title/tt1950186' target='_blank'>Le Mans' 66</a></td>                 <td>N/A</td><td>N/A</td><td>N/A</td><td>N/A</td>                 <td>N/A</td><td>N/A</td></tr>
+<tr><td>206</td><td>Yes</td><td><a href='https://www.imdb.com/title/tt0017925' target='_blank'>The General</a></td>                 <td>1926</td><td>8.1</td><td>92%</td><td>Clyde Bruckman, Buster Keaton</td>                 <td>Buster Keaton, Marion Mack, Glen Cavender</td><td>Action, Adventure, Comedy</td></tr>
+<tr><td>207</td><td>No </td><td><a href='https://www.imdb.com/title/tt0046268' target='_blank'>The Wages of Fear</a></td>                 <td>N/A</td><td>N/A</td><td>N/A</td><td>N/A</td>                 <td>N/A</td><td>N/A</td></tr>
+<tr><td>208</td><td>No </td><td><a href='https://www.imdb.com/title/tt0031679' target='_blank'>Mr. Smith Goes to Washington</a></td>                 <td>N/A</td><td>N/A</td><td>N/A</td><td>N/A</td>                 <td>N/A</td><td>N/A</td></tr>
+<tr><td>209</td><td>No </td><td><a href='https://www.imdb.com/title/tt0047296' target='_blank'>On the Waterfront</a></td>                 <td>N/A</td><td>N/A</td><td>N/A</td><td>N/A</td>                 <td>N/A</td><td>N/A</td></tr>
+<tr><td>210</td><td>No </td><td><a href='https://www.imdb.com/title/tt0050986' target='_blank'>Wild Strawberries</a></td>                 <td>N/A</td><td>N/A</td><td>N/A</td><td>N/A</td>                 <td>N/A</td><td>N/A</td></tr>
+<tr><td>211</td><td>No </td><td><a href='https://www.imdb.com/title/tt3315342' target='_blank'>Logan</a></td>                 <td>N/A</td><td>N/A</td><td>N/A</td><td>N/A</td>                 <td>N/A</td><td>N/A</td></tr>
+<tr><td>212</td><td>No </td><td><a href='https://www.imdb.com/title/tt0075148' target='_blank'>Rocky</a></td>                 <td>N/A</td><td>N/A</td><td>N/A</td><td>N/A</td>                 <td>N/A</td><td>N/A</td></tr>
+<tr><td>213</td><td>No </td><td><a href='https://www.imdb.com/title/tt0041959' target='_blank'>The Third Man</a></td>                 <td>N/A</td><td>N/A</td><td>N/A</td><td>N/A</td>                 <td>N/A</td><td>N/A</td></tr>
+<tr><td>214</td><td>No </td><td><a href='https://www.imdb.com/title/tt0046438' target='_blank'>Tokyo Story</a></td>                 <td>N/A</td><td>N/A</td><td>N/A</td><td>N/A</td>                 <td>N/A</td><td>N/A</td></tr>
+<tr><td>215</td><td>No </td><td><a href='https://www.imdb.com/title/tt1895587' target='_blank'>Spotlight</a></td>                 <td>N/A</td><td>N/A</td><td>N/A</td><td>N/A</td>                 <td>N/A</td><td>N/A</td></tr>
+<tr><td>216</td><td>No </td><td><a href='https://www.imdb.com/title/tt0118715' target='_blank'>The Big Lebowski</a></td>                 <td>N/A</td><td>N/A</td><td>N/A</td><td>N/A</td>                 <td>N/A</td><td>N/A</td></tr>
+<tr><td>217</td><td>Yes</td><td><a href='https://www.imdb.com/title/tt0088247' target='_blank'>The Terminator</a></td>                 <td>1984</td><td>8.1</td><td>100%</td><td>James Cameron</td>                 <td>Arnold Schwarzenegger, Linda Hamilton, Michael Biehn</td><td>Action, Sci-Fi</td></tr>
+<tr><td>218</td><td>No </td><td><a href='https://www.imdb.com/title/tt26548265' target='_blank'>Maharaja</a></td>                 <td>N/A</td><td>N/A</td><td>N/A</td><td>N/A</td>                 <td>N/A</td><td>N/A</td></tr>
+<tr><td>219</td><td>No </td><td><a href='https://www.imdb.com/title/tt0050976' target='_blank'>The Seventh Seal</a></td>                 <td>N/A</td><td>N/A</td><td>N/A</td><td>N/A</td>                 <td>N/A</td><td>N/A</td></tr>
+<tr><td>220</td><td>No </td><td><a href='https://www.imdb.com/title/tt0325980' target='_blank'>Pirates of the Caribbean: The Curse of the Black Pearl</a></td>                 <td>N/A</td><td>N/A</td><td>N/A</td><td>N/A</td>                 <td>N/A</td><td>N/A</td></tr>
+<tr><td>221</td><td>No </td><td><a href='https://www.imdb.com/title/tt3170832' target='_blank'>Room</a></td>                 <td>N/A</td><td>N/A</td><td>N/A</td><td>N/A</td>                 <td>N/A</td><td>N/A</td></tr>
+<tr><td>222</td><td>No </td><td><a href='https://www.imdb.com/title/tt0113247' target='_blank'>La haine</a></td>                 <td>N/A</td><td>N/A</td><td>N/A</td><td>N/A</td>                 <td>N/A</td><td>N/A</td></tr>
+<tr><td>223</td><td>No </td><td><a href='https://www.imdb.com/title/tt15097216' target='_blank'>Jai Bhim</a></td>                 <td>N/A</td><td>N/A</td><td>N/A</td><td>N/A</td>                 <td>N/A</td><td>N/A</td></tr>
+<tr><td>224</td><td>No </td><td><a href='https://www.imdb.com/title/tt0395169' target='_blank'>Hotel Rwanda</a></td>                 <td>N/A</td><td>N/A</td><td>N/A</td><td>N/A</td>                 <td>N/A</td><td>N/A</td></tr>
+<tr><td>225</td><td>No </td><td><a href='https://www.imdb.com/title/tt14961016' target='_blank'>I'm Still Here</a></td>                 <td>N/A</td><td>N/A</td><td>N/A</td><td>N/A</td>                 <td>N/A</td><td>N/A</td></tr>
+<tr><td>226</td><td>Yes</td><td><a href='https://www.imdb.com/title/tt0091763' target='_blank'>Platoon</a></td>                 <td>1986</td><td>8.1</td><td>89%</td><td>Oliver Stone</td>                 <td>Charlie Sheen, Tom Berenger, Willem Dafoe</td><td>Drama, War</td></tr>
+<tr><td>227</td><td>No </td><td><a href='https://www.imdb.com/title/tt0036868' target='_blank'>The Best Years of Our Lives</a></td>                 <td>N/A</td><td>N/A</td><td>N/A</td><td>N/A</td>                 <td>N/A</td><td>N/A</td></tr>
+<tr><td>228</td><td>No </td><td><a href='https://www.imdb.com/title/tt0381681' target='_blank'>Before Sunset</a></td>                 <td>N/A</td><td>N/A</td><td>N/A</td><td>N/A</td>                 <td>N/A</td><td>N/A</td></tr>
+<tr><td>229</td><td>No </td><td><a href='https://www.imdb.com/title/tt0070047' target='_blank'>The Exorcist</a></td>                 <td>N/A</td><td>N/A</td><td>N/A</td><td>N/A</td>                 <td>N/A</td><td>N/A</td></tr>
+<tr><td>230</td><td>No </td><td><a href='https://www.imdb.com/title/tt0059742' target='_blank'>The Sound of Music</a></td>                 <td>N/A</td><td>N/A</td><td>N/A</td><td>N/A</td>                 <td>N/A</td><td>N/A</td></tr>
+<tr><td>231</td><td>Yes</td><td><a href='https://www.imdb.com/title/tt0019254' target='_blank'>The Passion of Joan of Arc</a></td>                 <td>1928</td><td>8.2</td><td>98%</td><td>Carl Theodor Dreyer</td>                 <td>Maria Falconetti, Eugene Silvain, André Berley</td><td>Biography, Drama, History</td></tr>
+<tr><td>232</td><td>No </td><td><a href='https://www.imdb.com/title/tt0032138' target='_blank'>The Wizard of Oz</a></td>                 <td>N/A</td><td>N/A</td><td>N/A</td><td>N/A</td>                 <td>N/A</td><td>N/A</td></tr>
+<tr><td>233</td><td>No </td><td><a href='https://www.imdb.com/title/tt0317705' target='_blank'>The Incredibles</a></td>                 <td>N/A</td><td>N/A</td><td>N/A</td><td>N/A</td>                 <td>N/A</td><td>N/A</td></tr>
+<tr><td>234</td><td>No </td><td><a href='https://www.imdb.com/title/tt1028532' target='_blank'>Hachi: A Dog's Tale</a></td>                 <td>N/A</td><td>N/A</td><td>N/A</td><td>N/A</td>                 <td>N/A</td><td>N/A</td></tr>
+<tr><td>235</td><td>No </td><td><a href='https://www.imdb.com/title/tt1979320' target='_blank'>Rush</a></td>                 <td>N/A</td><td>N/A</td><td>N/A</td><td>N/A</td>                 <td>N/A</td><td>N/A</td></tr>
+<tr><td>236</td><td>Yes</td><td><a href='https://www.imdb.com/title/tt0092005' target='_blank'>Stand by Me</a></td>                 <td>1986</td><td>8.1</td><td>92%</td><td>Rob Reiner</td>                 <td>Wil Wheaton, River Phoenix, Corey Feldman</td><td>Adventure, Drama</td></tr>
+<tr><td>237</td><td>No </td><td><a href='https://www.imdb.com/title/tt0476735' target='_blank'>My Father and My Son</a></td>                 <td>N/A</td><td>N/A</td><td>N/A</td><td>N/A</td>                 <td>N/A</td><td>N/A</td></tr>
+<tr><td>238</td><td>No </td><td><a href='https://www.imdb.com/title/tt0074958' target='_blank'>Network</a></td>                 <td>N/A</td><td>N/A</td><td>N/A</td><td>N/A</td>                 <td>N/A</td><td>N/A</td></tr>
+<tr><td>239</td><td>No </td><td><a href='https://www.imdb.com/title/tt0129167' target='_blank'>The Iron Giant</a></td>                 <td>N/A</td><td>N/A</td><td>N/A</td><td>N/A</td>                 <td>N/A</td><td>N/A</td></tr>
+<tr><td>240</td><td>No </td><td><a href='https://www.imdb.com/title/tt4016934' target='_blank'>The Handmaiden</a></td>                 <td>N/A</td><td>N/A</td><td>N/A</td><td>N/A</td>                 <td>N/A</td><td>N/A</td></tr>
+<tr><td>241</td><td>No </td><td><a href='https://www.imdb.com/title/tt5323662' target='_blank'>A Silent Voice</a></td>                 <td>N/A</td><td>N/A</td><td>N/A</td><td>N/A</td>                 <td>N/A</td><td>N/A</td></tr>
+<tr><td>242</td><td>No </td><td><a href='https://www.imdb.com/title/tt0035446' target='_blank'>To Be or Not to Be</a></td>                 <td>N/A</td><td>N/A</td><td>N/A</td><td>N/A</td>                 <td>N/A</td><td>N/A</td></tr>
+<tr><td>243</td><td>No </td><td><a href='https://www.imdb.com/title/tt0058946' target='_blank'>The Battle of Algiers</a></td>                 <td>N/A</td><td>N/A</td><td>N/A</td><td>N/A</td>                 <td>N/A</td><td>N/A</td></tr>
+<tr><td>244</td><td>No </td><td><a href='https://www.imdb.com/title/tt0032551' target='_blank'>The Grapes of Wrath</a></td>                 <td>N/A</td><td>N/A</td><td>N/A</td><td>N/A</td>                 <td>N/A</td><td>N/A</td></tr>
+<tr><td>245</td><td>No </td><td><a href='https://www.imdb.com/title/tt0758758' target='_blank'>Into the Wild</a></td>                 <td>N/A</td><td>N/A</td><td>N/A</td><td>N/A</td>                 <td>N/A</td><td>N/A</td></tr>
+<tr><td>246</td><td>No </td><td><a href='https://www.imdb.com/title/tt0107048' target='_blank'>Groundhog Day</a></td>                 <td>N/A</td><td>N/A</td><td>N/A</td><td>N/A</td>                 <td>N/A</td><td>N/A</td></tr>
+<tr><td>247</td><td>No </td><td><a href='https://www.imdb.com/title/tt1454029' target='_blank'>The Help</a></td>                 <td>N/A</td><td>N/A</td><td>N/A</td><td>N/A</td>                 <td>N/A</td><td>N/A</td></tr>
+<tr><td>248</td><td>No </td><td><a href='https://www.imdb.com/title/tt0245712' target='_blank'>Amores perros</a></td>                 <td>N/A</td><td>N/A</td><td>N/A</td><td>N/A</td>                 <td>N/A</td><td>N/A</td></tr>
+<tr><td>249</td><td>No </td><td><a href='https://www.imdb.com/title/tt4430212' target='_blank'>Drishyam</a></td>                 <td>N/A</td><td>N/A</td><td>N/A</td><td>N/A</td>                 <td>N/A</td><td>N/A</td></tr>
+</tbody>
+</table>
+
+<script>
+    function myFunction() {
+        // Declare variables
+        var input, filter, table, tr, td, i, txtValue;
+        // This variable switch if the filter catch any result
+        var isset = false;
+        input = document.getElementById("myInput");
+        filter = input.value.toUpperCase();
+        table = document.getElementById("myTable");
+        tr = table.getElementsByTagName("tr");
+
+        // This variable switch if the filter catch any result
+        var isset = false;
+
+        //This loop evalaute all rows
+        rowsFound = [];
+        for (i = 1; i < tr.length; i++) {
+            //Here we search for all columns in this row
+            //note that we get rid of [0] at the end because we're looking for all
+            //tds, not just the first one
+            let tds = tr[i].getElementsByTagName("td");
+            //Here we evaluate each column for this row
+            for (let td of tds) {
+                //If td has a value
+                if (td) {
+                    txtValue = td.textContent || td.innerText;
+                    if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                        //If the filter catch any result, we show the row
+                        isset = true;
+                    }
+                }
+            }
+            //The decision of show or hide the row is made here because
+            //the loop has to evaluate all columns before decide if show or hide the entire row
+            if (isset) {
+                //If the filter catch any result, we show the row
+                tr[i].style.display = "";
+                rowsFound.push(1)
+            } else {
+                //If the filter catch no result, we hide the row
+                tr[i].style.display = "none";
+            }
+            //This is to reset the variable for the next loop
+            isset = false;
+        }
+        document.getElementById("statistic").innerHTML = "Matches: " + rowsFound.length;
+    }
+</script>
+</body>
+</html>
